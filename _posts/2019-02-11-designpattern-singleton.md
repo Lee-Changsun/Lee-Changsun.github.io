@@ -28,9 +28,11 @@ public class Printer {
         System.out.println(str);
     }
 }
-```
+```  
+
 - 위의 상황에서 하나의 프린트를 여러명이 공유하기 때문에 여러명의 클라이언트가 하나의 객채를 사용하는 상황이다.
 - 이러한 프린트 클래스를 싱클턴으로 작성하면 아래와 같다.
+
 ```java
 public class PrinterSingleton {
     private static PrinterSingleton instance = null;    // @3
@@ -49,7 +51,8 @@ public class PrinterSingleton {
         System.out.println(str);
     }    
 }
-```
+```  
+
 #### 비교 및 분석
 - Printer 클래스
     - 생성자, 출력 함수로 간단하게 구성되어 있다.
@@ -122,7 +125,7 @@ public class PrinterSingleton {
     
     // ...
 }
-```
+```  
 - 실질 적으로 변경된 부분은 @4에 해당되는 getInstance() 메서드에 synchronized modifier가 붙은 것이다.
 - 즉 Java의 synchronized modifier를 사용해 thread-safe 하게 끔 수정 한 것이다.
 - 하지만 synchronzied 특성상 비교적 성능저하가 발생하므로 권장하지 않는다.
@@ -146,7 +149,8 @@ public class PrinterSingleton {
         return instance;
     }
 }
-```
+```  
+
 - Thread safe Lazy initialization 방법의 성능 저하를 완화 시킨 방법이다.
 - getInstance() 함수를 호출시 마다 synchronized를 사용하는 것이 아니라, 첫번째 if문으로 instance 클래스 변수의 null 여부를 판별 한 후 null일 경우에 두번째 if문을 사용할때 동기화를 시키기 때문에 thread-safe 하면서도 위의 방법보다 성능 저하가 완화 되었다.
 - 하지만 이 또한 더 개선할 부분이 남아있다.
@@ -164,7 +168,8 @@ public class PrinterSingleton {
         return LazyHolder.INSTANCE;
     }
 }
-```
+```  
+
 - 이 방법은 중첩 클래스를 이용한 Holder를 사용하는 방법이다. getInstance() 메서드가 호출되기 전까지는 PrinterSingleton 인스턴스는 생성되지 않는다.
 - getInstance() 메서드가 호출되는 시점에 LazyHolder 가 참조되고 그 때 PrinterSingleton 인스턴스가 생성된다.
 - Lazy initialization 기법으로 메모리 점유율 면에서 유리하다.
@@ -181,6 +186,7 @@ public enum PrinterSingleton {
         return INSTANCE;
     }
 }
-```
+```  
+
 - Thread-safe와 Serialization이 보장된다.
 - Reflection을 통한 공격에도 안전하다.
