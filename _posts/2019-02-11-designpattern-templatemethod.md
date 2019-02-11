@@ -46,7 +46,7 @@ AbstractClass <|-- ConcreteClass
 ### 예시
 #### 여러 회사의 모터 지원하기
 - ![모터 클래스 다이어그램](/../img/designpattern-templatemethod-motor-1-classdiagram.png)
-<!--
+<!---
 @startuml
 skinparam classAttributeIconSize 0
 class HyundaiMotor {
@@ -88,6 +88,6 @@ HyundaiMotor *-- MotorStatus
 HyundaiMotor o-- Direction
 Door *-- DoorStatus
 @enduml
--->
+--->
 - 엘리베이터 제어 시스템에서 모터를 구동시키는 기능
     - 예를 들어 현대 모터를 이용하는 제어 시스템이라면 HyundaoMotor 클래스에 move 메서드를 정의할 수 있다.
