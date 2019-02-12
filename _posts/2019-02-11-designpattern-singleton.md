@@ -14,16 +14,6 @@ tags:
 ### 싱글턴 패턴이란
 - 전역 변수를 사용하지 않고 객체를 하나만 생성 하도록 하며, 생성된 객체를 어디에서든지 참조할 수 있도록 하는 패턴
 - ![싱글턴 클래스 다이어그램 예시](/img/designpattern-singleton-ex-classdiagram.png)
-<!--
-@startuml
-skinparam classAttributeIconSize 0
-class Singleton{
-    - {static} instance : Singleton
-    - Singleton()
-    + {static} getInstance() : Singleton
-}
-@enduml
--->
 - 하나의 인스턴스만을 생성하는 책임이 있으며 getInstance() 메서드를 통해 모든 클라이언트에게 동일한 인스턴스를 반환하는 작업을 수행한다.
 
 ### 예시
@@ -118,7 +108,7 @@ class User {
     1. 스레드-1, 스레드-2 모두 인스턴스를 생성하는 코드를 실행하게 되면 결과적으로 PrintSingleton 클래스의 인스턴스가 2개가 생성된다.
     
 #### 해결 방법
- - Thread safe Lazy initialization
+##### Thread safe Lazy initialization
 ```java
 public class PrinterSingleton {
     private static PrinterSingleton instance;
@@ -141,7 +131,7 @@ public class PrinterSingleton {
     - 즉 Java의 synchronized modifier를 사용해 thread-safe 하게 끔 수정 한 것이다.
     - 하지만 synchronzied 특성상 비교적 성능저하가 발생하므로 권장하지 않는다.
 
-- Thread safe Lazy initialization + Double-checked locking
+##### Thread safe Lazy initialization + Double-checked locking
 ```java
 public class PrinterSingleton {
     private volatile static PrinterSingleton instance;
@@ -166,7 +156,7 @@ public class PrinterSingleton {
     - getInstance() 함수를 호출시 마다 synchronized를 사용하는 것이 아니라, 첫번째 if문으로 instance 클래스 변수의 null 여부를 판별 한 후 null일 경우에 두번째 if문을 사용할때 동기화를 시키기 때문에 thread-safe 하면서도 위의 방법보다 성능 저하가 완화 되었다.
     - 하지만 이 또한 더 개선할 부분이 남아있다.
 
-- Initialization on demand holder idiom(Holder에 의한 초기화)
+##### Initialization on demand holder idiom(Holder에 의한 초기화)
 ```java
 public class PrinterSingleton {
     private PrinterSingleton(){}
@@ -188,7 +178,7 @@ public class PrinterSingleton {
     - 이 방법은 JVM의 클래스 초기화 과정에서 보장되는 원자적 특성을 이용하여 싱클턴의 초기화 문제에 대한 책임을 JVM에 떠넘긴 방법이다.
     - Holder 안에 선언된 INSTANCE는 클래스 변수이기 때문에 로딩 시점에 한번만 호출 될 것이며, final 키워드를 사용해 다시 값이 할당 되지 않도록 한 방법이다.
 
-- Enum
+##### Enum
 ```java
 public enum PrinterSingleton {
     INSTANCE;
