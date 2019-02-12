@@ -127,9 +127,9 @@ public class PrinterSingleton {
 }
 ```  
 
-    - 실질 적으로 변경된 부분은 @4에 해당되는 getInstance() 메서드에 synchronized modifier가 붙은 것이다.
-    - 즉 Java의 synchronized modifier를 사용해 thread-safe 하게 끔 수정 한 것이다.
-    - 하지만 synchronzied 특성상 비교적 성능저하가 발생하므로 권장하지 않는다.
+- 실질 적으로 변경된 부분은 @4에 해당되는 getInstance() 메서드에 synchronized modifier가 붙은 것이다.
+- 즉 Java의 synchronized modifier를 사용해 thread-safe 하게 끔 수정 한 것이다.
+- 하지만 synchronzied 특성상 비교적 성능저하가 발생하므로 권장하지 않는다.
 
 ##### Thread safe Lazy initialization + Double-checked locking
 ```java
@@ -152,9 +152,9 @@ public class PrinterSingleton {
 }
 ```  
 
-    - Thread safe Lazy initialization 방법의 성능 저하를 완화 시킨 방법이다.
-    - getInstance() 함수를 호출시 마다 synchronized를 사용하는 것이 아니라, 첫번째 if문으로 instance 클래스 변수의 null 여부를 판별 한 후 null일 경우에 두번째 if문을 사용할때 동기화를 시키기 때문에 thread-safe 하면서도 위의 방법보다 성능 저하가 완화 되었다.
-    - 하지만 이 또한 더 개선할 부분이 남아있다.
+- Thread safe Lazy initialization 방법의 성능 저하를 완화 시킨 방법이다.
+- getInstance() 함수를 호출시 마다 synchronized를 사용하는 것이 아니라, 첫번째 if문으로 instance 클래스 변수의 null 여부를 판별 한 후 null일 경우에 두번째 if문을 사용할때 동기화를 시키기 때문에 thread-safe 하면서도 위의 방법보다 성능 저하가 완화 되었다.
+- 하지만 이 또한 더 개선할 부분이 남아있다.
 
 ##### Initialization on demand holder idiom(Holder에 의한 초기화)
 ```java
@@ -171,12 +171,12 @@ public class PrinterSingleton {
 }
 ```  
 
-    - 이 방법은 중첩 클래스를 이용한 Holder를 사용하는 방법이다. getInstance() 메서드가 호출되기 전까지는 PrinterSingleton 인스턴스는 생성되지 않는다.
-    - getInstance() 메서드가 호출되는 시점에 LazyHolder 가 참조되고 그 때 PrinterSingleton 인스턴스가 생성된다.
-    - Lazy initialization 기법으로 메모리 점유율 면에서 유리하다.
-    - synchronzied 사용에 따른 성능 저하도 없다.
-    - 이 방법은 JVM의 클래스 초기화 과정에서 보장되는 원자적 특성을 이용하여 싱클턴의 초기화 문제에 대한 책임을 JVM에 떠넘긴 방법이다.
-    - Holder 안에 선언된 INSTANCE는 클래스 변수이기 때문에 로딩 시점에 한번만 호출 될 것이며, final 키워드를 사용해 다시 값이 할당 되지 않도록 한 방법이다.
+- 이 방법은 중첩 클래스를 이용한 Holder를 사용하는 방법이다. getInstance() 메서드가 호출되기 전까지는 PrinterSingleton 인스턴스는 생성되지 않는다.
+- getInstance() 메서드가 호출되는 시점에 LazyHolder 가 참조되고 그 때 PrinterSingleton 인스턴스가 생성된다.
+- Lazy initialization 기법으로 메모리 점유율 면에서 유리하다.
+- synchronzied 사용에 따른 성능 저하도 없다.
+- 이 방법은 JVM의 클래스 초기화 과정에서 보장되는 원자적 특성을 이용하여 싱클턴의 초기화 문제에 대한 책임을 JVM에 떠넘긴 방법이다.
+- Holder 안에 선언된 INSTANCE는 클래스 변수이기 때문에 로딩 시점에 한번만 호출 될 것이며, final 키워드를 사용해 다시 값이 할당 되지 않도록 한 방법이다.
 
 ##### Enum
 ```java
@@ -189,8 +189,8 @@ public enum PrinterSingleton {
 }
 ```  
 
-    - Thread-safe와 Serialization이 보장된다.
-    - Reflection을 통한 공격에도 안전하다.
+- Thread-safe와 Serialization이 보장된다.
+- Reflection을 통한 공격에도 안전하다.
     
 ---
  

@@ -169,7 +169,7 @@ public class Client {
     - 스트래티지 패턴을 이용하면 새로운 기능 추가(새로운 이동, 공격 기능)가 기존의 코드에 영항을 미치지 못하게 하므로 OCP를 만족 하는 설계가 된다.
         - 이렇게 변경된 새로운 구조에서는 외부에서 로봇 객체의 이동, 공격 방식을 임의대로 바꾸도록 해주는 setter 매서드가 필요하다. (setMovingStrategy, setAttackStrategy)
         - 변경이 가능한 이유는 상속 대신 집약 관계를 이용했기 때문이다.
-- Robot 클래스
+- Robot 클래스  
 ```java
 public abstract class Robot {
     private String name;
@@ -204,7 +204,7 @@ public abstract class Robot {
 }
 ```  
 
-- 구체적인 Robot 클래스
+- 구체적인 Robot 클래스  
 ```java
 public class TaekwonV extends Robot {
     public TaekwonV(String name) {
@@ -225,7 +225,7 @@ public class Sungard extends Robot {
 }
 ```  
 
-- 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스
+- 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스  
 ```java
 // 인터페이스
 interface AttackStrategy {
@@ -262,7 +262,7 @@ public class WalkingStrategy implements MovingStrategy {
 }
 ```  
 
-- 클라이언트에서의 사용
+- 클라이언트에서의 사용  
 ```java
 public class Client {
     public static void main(String[] args) {
