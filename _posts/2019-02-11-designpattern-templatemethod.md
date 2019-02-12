@@ -31,7 +31,7 @@ tags:
 - ![모터 클래스 다이어그램](/../img/designpattern-templatemethod-motor-1-classdiagram.png)
 - 엘리베이터 제어 시스템에서 모터를 구동시키는 기능
     - 예를 들어 현대 모터를 이용하는 제어 시스템이라면 HyundaiMotor 클래스에 move 메서드를 정의할 수 있다.
-    - move 메서드를 실행할 때 안전을 위해 Door가 닫혀 있는지 확ㅇ니하기 위해 연관 과계를 정의한다.
+    - move 메서드를 실행할 때 안전을 위해 Door가 닫혀 있는지 확인하기 위해 연관 관계를 정의한다.
     - Enumeration Interface
         - 모터의 상태(정지, 이동)
         - 문의 상태(닫힘, 열림)
