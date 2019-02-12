@@ -330,5 +330,7 @@ public class LGMotor extends Motor {
 - TemplateMethod : Motor 클래스의 move 메서드
 - Primitive(Hook)Operation : move 메서드에서 호출되면서 하위 클래스에서 오버라이드 될 필요가 있는 moveMotor 메서드
 
+---
+ 
 ## Reference
 [[Design Pattern] 템플릿 메서드 패턴이란](https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html)

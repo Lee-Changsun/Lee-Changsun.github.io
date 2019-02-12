@@ -87,7 +87,7 @@ Update: update?
                 - 객체의 상태에 따라 객체의 행위 내용을 변경해주는 패턴
             - 스트래티지(Strategy)
                 - 햏위를 클래스로 캡슐화해 동적으로 행위를 자유롭게 바꿀 수 있게 해주는 패턴
-            - 템플릿 메서드(Template Method)
+            - [템플릿 메서드(Template Method)](https://lee-changsun.github.io/2019/02/11/designpattern-templatemethod/)
                 - 어떤 작업을 처리하는 일부분을 서브 클래스로 캡슐화해 전체 일을 수행하는 구조는 바꾸지 않으면서 특정 단계에서 수행하는 내역을 바꾸는 패턴
             - 커멘드(Command)
                 - 실행될 기능을 캡슐화함으로써 주어진 여러 기능을 실행할 수 있는 재사용성이 높은 클래스를 설계하는 패턴

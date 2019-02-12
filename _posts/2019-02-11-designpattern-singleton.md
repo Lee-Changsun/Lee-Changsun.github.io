@@ -192,6 +192,8 @@ public enum PrinterSingleton {
     - Thread-safe와 Serialization이 보장된다.
     - Reflection을 통한 공격에도 안전하다.
     
+---
+ 
 ## Reference
 - [싱글턴 패턴이란](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html)
 - [싱글톤 패턴(Singleton pattern)을 쓰는 이유와 문제점](https://jeong-pro.tistory.com/86)
