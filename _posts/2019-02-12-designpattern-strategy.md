@@ -205,7 +205,6 @@ public abstract class Robot {
 ```  
 
 - 구체적인 Robot 클래스  
-
 ```java  
 public class TaekwonV extends Robot {
     public TaekwonV(String name) {
@@ -227,7 +226,7 @@ public class Sungard extends Robot {
 ```  
 
 - 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스  
-```java
+```java  
 // 인터페이스
 interface AttackStrategy {
     public void attack();
@@ -264,7 +263,7 @@ public class WalkingStrategy implements MovingStrategy {
 ```  
 
 - 클라이언트에서의 사용  
-```java
+```java  
 public class Client {
     public static void main(String[] args) {
         Robot taekwonV = new TaekwonV("TaekwonV");
