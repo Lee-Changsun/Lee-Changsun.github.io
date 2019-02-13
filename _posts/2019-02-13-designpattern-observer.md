@@ -326,6 +326,35 @@ public class MinMaxView implements Observer {
 }
 ```  
 
+- 클라이언트에서의 사용
+
+```java
+public class Client {
+    public static void main(String[] args){
+        ScoreRecord scoreRecord = new ScoreRecord();
+        
+        // 3개 까지의 점수만 출력함
+        DataSheetView dataSheetView = new DataSheetView(scoreRecord, 3);
+        // 최소/최대값만 출력함
+        MinMaxView minMaxView = new MinMaxView(scoreRecord, 3);
+        
+        // 각 통보 대상 클래스를 Observer로 추가
+        scoreRecord.attach(dataSheetView);
+        scoreRecord.attach(minMaxView);
+        
+        // 10 20 30 40 50을 추가
+        for(int index = 0; index <= 5; index++){
+            int score = index * 10;
+            System.out.println("Adding " + score);
+            
+            // 차가할 때마다 최대 3개의 점수 목록과 최대/최소값이 출력됨
+            scoreRecord.addScore(score);
+        }
+    }
+}
+
+```  
+
 - Observer
     - 추상화된 통보 대상
 - DataSheetView, MinMaxView (ConcreteObserver)
