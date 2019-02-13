@@ -204,7 +204,7 @@ public abstract class Robot {
 }
 ```  
 
-- 구체적인 Robot 클래스  
+- 구체적인 Robot 클래스
 
 ```java
 public class TaekwonV extends Robot {
@@ -226,7 +226,7 @@ public class Sungard extends Robot {
 }
 ```  
 
-- 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스  
+- 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스
 
 ```java  
 interface AttackStrategy {
