@@ -209,28 +209,24 @@ public abstract class Robot {
 public class TaekwonV extends Robot {
     public TaekwonV(String name) {
         super(name);
-        // TaekwonV 생성자
     }
 }
 
 public class Atom extends Robot { 
     public Atom(String name) {
         super(name);
-        // Atom 생성자
     }
 }
 
 public class Sungard extends Robot {
     public Sungard(String name) {
         super(name);
-        // Sungrad 생성자
     }
 }
 ```  
 
 - 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스  
 ```java  
-// 인터페이스
 interface AttackStrategy {
     public void attack();
 }
@@ -239,7 +235,6 @@ interface MovingStrategy {
     public void move();
 }
 
-// 구체적인 클래스
 public class MissileStrategy implements AttackStrategy {
     public void attack() {
         System.out.println("missile attack");
