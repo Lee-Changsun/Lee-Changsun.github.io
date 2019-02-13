@@ -205,7 +205,8 @@ public abstract class Robot {
 ```  
 
 - 구체적인 Robot 클래스  
-```java
+
+```java  
 public class TaekwonV extends Robot {
     public TaekwonV(String name) {
         super(name);
