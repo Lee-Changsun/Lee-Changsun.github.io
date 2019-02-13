@@ -205,6 +205,7 @@ public abstract class Robot {
 ```  
 
 - 구체적인 Robot 클래스  
+
 ```java
 public class TaekwonV extends Robot {
     public TaekwonV(String name) {
@@ -223,10 +224,10 @@ public class Sungard extends Robot {
         super(name);
     }
 }
-
 ```  
 
 - 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스  
+
 ```java  
 interface AttackStrategy {
     public void attack();
@@ -259,7 +260,6 @@ public class WalkingStrategy implements MovingStrategy {
         System.out.println("walk move");
     }
 }
-
 ```  
 
 - 클라이언트에서의 사용  
