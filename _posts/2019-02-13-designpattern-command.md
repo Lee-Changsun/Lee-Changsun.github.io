@@ -34,6 +34,7 @@ tags:
 #### 만능 버튼 만들기
 - ![커맨드 패턴 버튼 예시 1](/../img/designpattern-command-button-1-classdiagram.png)
 - 버튼이 눌리면 램프의 불이 켜지는 프로그램
+
 ```java
 public class Lamp {
     public void turnOn() {
@@ -71,6 +72,7 @@ public class Client {
 #### 문제점
 1. 버튼을 눌렀을 때 다른 기능을 실행하는 경우
     - 버튼을 눌렀을 때 알림이 시작되게 하려면 ?
+    
     ```java
     public class Alarm {
         public void start() {
@@ -107,6 +109,7 @@ public class Client {
 
 1. 버튼을 누르는 동작에 따라 다른 기능을 실행하는 경우
     - 버튼을 처음 눌렀을 때는 램프를 켜고, 두 번째 눌렀을 때는 알림을 동작하게 하려면 ?
+    
     ```java
     enum Mode {
         LAMP, ALARM
@@ -152,6 +155,7 @@ public class Client {
     - LampOnCommand 클래스에서는 Command 인터페이스의 execute 메서드를 구현해 Lamp 클래스의 turnOn() 메서드(램프 켜는 기능)를 호출한다.
     - 마찬가지로 AlarmStartCommand 클래스는 Command 인터페이스의 execute 메서드를 구현해 Alarm 클래스의 start() 메서드(알람이 울리는 기능)를 호출한다.
 - Command 인터페이스
+
 ```java
 public interface Command {
     public void execute();
@@ -159,6 +163,7 @@ public interface Command {
 ```  
 
 - Button 클래스
+
 ```java
 public class Button {
     private Command command;
@@ -180,6 +185,7 @@ public class Button {
 ```  
 
 - Lamp, LampOnCommand 클래스
+
 ```java
 public class Lamp {
     public void turnOn() {
@@ -203,6 +209,7 @@ public class LampOnCommand implements Command {
 ```  
 
 - Alarm, AlarmStartCommand 클래스
+
 ```java
 public class Alarm {
     public void start() {
@@ -226,6 +233,7 @@ public class AlarmStartCommand implements Command {
 ```  
 
 - 클라이언트에서의 사용
+
 ```java
 public class Client {
     public static void main(String[] args){
