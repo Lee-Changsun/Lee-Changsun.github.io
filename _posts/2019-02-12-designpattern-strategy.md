@@ -223,6 +223,7 @@ public class Sungard extends Robot {
         super(name);
     }
 }
+
 ```  
 
 - 공격, 이동 기능에 대한 인터페이스와 구체적인 클래스  
@@ -258,6 +259,7 @@ public class WalkingStrategy implements MovingStrategy {
         System.out.println("walk move");
     }
 }
+
 ```  
 
 - 클라이언트에서의 사용  
