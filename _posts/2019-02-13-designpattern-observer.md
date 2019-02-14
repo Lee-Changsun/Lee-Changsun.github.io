@@ -9,7 +9,7 @@ tags:
     - Design Pattern
     - Observer Pattern
 ---  
-[참고](/_posts/2019-02-08-designpattern-intro.md)  
+[참고](https://lee-changsun.github.io/2019/02/08/designpattern-intro/)  
 
 ### 옵저버 패턴이란
 - 한 객체의 상태 변화에 따라 다른 객체의 상태도 연동되도록 일대다 객체 의존 관계를 구성 하는 패턴

@@ -9,7 +9,7 @@ tags:
     - Design Pattern
     - Template Method Pattern
 ---  
-[참고](/_posts/2019-02-08-designpattern-intro.md)  
+[참고](https://lee-changsun.github.io/2019/02/08/designpattern-intro/)  
 
 ### 템플릿 메서드 패턴이란
 - 어떤 작업을 처리하는 일부분을 서브 클래스로 캡슐화해 전체 일을 수행하는 구조는 바꾸지 않으면서 특정 단계에서 수행하는 내역을 바꾸는 패턴

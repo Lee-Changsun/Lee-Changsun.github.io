@@ -9,7 +9,7 @@ tags:
     - Design Pattern
     - Singleton
 ---  
-[참고](/_posts/2019-02-08-designpattern-intro.md)  
+[참고](https://lee-changsun.github.io/2019/02/08/designpattern-intro/)  
 
 ### 싱글턴 패턴이란
 - 전역 변수를 사용하지 않고 객체를 하나만 생성 하도록 하며, 생성된 객체를 어디에서든지 참조할 수 있도록 하는 패턴

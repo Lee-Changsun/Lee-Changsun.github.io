@@ -9,7 +9,7 @@ tags:
     - Design Pattern
     - Strategy Pattern
 ---  
-[참고](/_posts/2019-02-08-designpattern-intro.md)  
+[참고](https://lee-changsun.github.io/2019/02/08/designpattern-intro/)  
 
 ### 스트래티지 패턴 이란
 - 행위를 클래스로 캡슐화해 동적으로 행위를 자유롭게 바꿀 수 있게 해주는 패턴

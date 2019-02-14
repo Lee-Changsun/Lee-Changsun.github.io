@@ -9,7 +9,7 @@ tags:
     - Design Pattern
     - Command Pattern
 ---  
-[참고](/_posts/2019-02-08-designpattern-intro.md)  
+[참고](https://lee-changsun.github.io/2019/02/08/designpattern-intro/)  
 
 ### 커맨드 패턴이란
 - 실행될 기능을 캡슐화함으로써 주어진 여러 기능을 실행할 수 있는 재사용성이 높은 클래스를 설계하는 패턴
